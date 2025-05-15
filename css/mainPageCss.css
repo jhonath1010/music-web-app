@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Boogaloo&display=swap");
+
+body {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: rgb(23, 21, 21);
+}
+
+#outer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.cards {
+  font-family: "Boogaloo", sans-serif;
+  font-size: x-large;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto 1.5rem;
+  border: 5px solid whitesmoke;
+  border-radius: 4%;
+  background-color: rgb(250, 250, 250);
+}
+
+.cards img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.cards:hover {
+  border-radius: 20px;
+  border: 4px solid rgb(255, 71, 89);
+}
+
+.details span,
+.details h2 {
+  display: block;
+  margin-bottom: 1%;
+  color: black;
+}
+
+.details time,
+.details span {
+  font-family: sans-serif;
+  background-color: rgb(250, 250, 250);
+  color: black;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+#selected-artist {
+  color: white;
+  text-align: left;
+}
+
+button {
+  background-color: rgb(47, 46, 46);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(255, 71, 89);
+  color: white;
+}
+
+header > h1 {
+  font-size: 3.2rem;
+  color: white;
+  text-align: left;
+}
+
+span {
+  font-size: 15px;
+}
+
+.formFormat {
+  color: white;
+  text-align: center;
+}
+
+.formCenter {
+  display: inline-block;
+}
+
+form h2 {
+  color: white;
+}
+
+.highlight {
+  color: #ff4081;
+  font-size: inherit;
+  background-color: transparent;
+}
+
+@media (max-width: 1024px) {
+  #outer {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .details h2 {
+    font-size: 1.5rem;
+  }
+
+  .details span,
+  .details time {
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .details h2 {
+    font-size: 1.2rem;
+  }
+
+  .details span,
+  .details time {
+    font-size: 0.9rem;
+    padding: 5px;
+      background-color: transparent;
+
+  }
+
+  header p {
+    margin-bottom: 10px;
+  }
+}

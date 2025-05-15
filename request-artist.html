@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request Artist</title>
+    <!-- Classless CSS Stylesheet - https://watercss.kognise.dev/ -->
+    <link rel="stylesheet" href="./css/water.css" />
+    <link rel="stylesheet" href="./css/requestPageCSS.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <article id="request-form-container">
+      <header>
+        <!-- Change this to your App's info -->
+        <h1>Seneca Music</h1>
+        <p>Your Playlist, Your Vibe</p>
+      </header>
+      <hr />
+      <h2>Request A New Artist</h2>
+
+      <form id="request-form" action="https://httpbin.org/post" method="post">
+        <label for="artist-name"
+          ><i class="fa-solid fa-user fa-xs theme"></i> &nbsp;Artist's Name<span>*</span></label
+        >
+        <input type="text" id="artist-name" name="artist-name" required />
+
+        <label for="genre"><i class="fa-solid fa-music"></i> &nbsp;Music Genre<span>*</span></label>
+        <input type="text" list="genres" id="genre" name="genre" required />
+        <datalist id="genres">
+          <option value="Hip-Hop"></option>
+          <option value="Afro"></option>
+          <option value="Reggaetton"></option>
+          <option value="Country"></option>
+          <option value="Punk"></option>
+          <option value="Rock"></option>
+          <option value="Blues"></option>
+          <option value="other"></option>
+        </datalist>
+
+        <label for="year"><i class="fa-solid fa-calendar-days"></i> &nbsp;Year<span>*</span></label>
+        <input type="number" id="year" name="year" placeholder="e.g., 2023" required />
+
+        <label for="duration"><i class="fa-regular fa-clock"></i> &nbsp;Duration</label>
+        <input type="text" id="duration" name="duration" placeholder="e.g., 3:00" />
+
+        <label for="socials"><i class="fa-solid fa-share-nodes"></i> &nbsp;Social Media URLs</label>
+        <input type="url" id="socials" name="socials" placeholder="https://example.com" />
+
+        <label for="songs"
+          ><i class="fa-solid fa-video"></i> &nbsp;Song/Video URLs<span>*</span></label
+        >
+        <div id="song-video-urls-container">
+          <input type="url" name="song-video-urls[]" placeholder="https://example.com" required />
+        </div>
+        <button type="button" id="add-song-video-url">Add New URL</button>
+        <br />
+        <label for="explicit"><i class="fa-solid fa-e"></i> &nbsp; Explicit:</label>
+        <input type="checkbox" id="explicit" name="explicit" />
+
+        <input type="submit" value="Submit" />
+      </form>
+
+      <button onclick="window.location.href='index.html';">Return to Homepage</button>
+      <span class="theme">*</span>
+      <span style="font-size: 0.89em">Required</span>
+      <script src="./js/requestArtist.js"></script>
+    </article>
+  </body>
+</html>
